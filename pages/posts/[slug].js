@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Link from "next/link";
 import { getSinglePost, getPosts } from "../../lib/posts";
 
@@ -49,6 +50,16 @@ function PostPage(props) {
       <h1>{post.title}</h1>
       <br></br>
       <div>{post.html}</div>
+      <br></br>
+      <img src={post.feature_image} />
+      {/* <Image
+        src={`${post.feature_image}`}
+        alt="Picture of the author"
+        width={500}
+        height={500}
+        // blurDataURL="data:..."
+        // placeholder="blur" // Optional blur-up while loading
+      /> */}
     </div>
   );
 }
