@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { getSinglePost, getPosts } from "../../lib/posts";
+import { getSinglePost, getAllPosts } from "../../lib/posts";
 
 export async function getStaticPaths() {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
 
   // Get the paths we want to create based on posts
   const paths = posts.map((post) => ({
@@ -49,7 +49,7 @@ function PostPage(props) {
       <br></br>
       <h1>{post.title}</h1>
       <br></br>
-      <div>{post.html}</div>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <br></br>
       <img src={post.feature_image} />
       {/* <Image

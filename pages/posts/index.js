@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { getPosts } from "../../lib/posts";
+import { getAllPosts } from "../../lib/posts";
 
 export async function getStaticProps(context) {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
 
   if (!posts) {
     return {
@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
   };
 }
 
-function PostsPage(props) {
+function AllPostsPage(props) {
   const router = useRouter();
   const posts = props.posts;
   console.log("POSTS", posts);
@@ -31,14 +31,14 @@ function PostsPage(props) {
       <br></br>
       <ul>
         {props.posts.map((post) => (
-          <li key={post.id}>
+          <li className="link" key={post.id}>
             <Link
               href={{
                 pathname: "/posts/[slug]",
                 query: { slug: post.slug },
               }}
             >
-              {post.title}
+              <p>Article: {post.title}</p>
             </Link>
           </li>
         ))}
@@ -47,4 +47,4 @@ function PostsPage(props) {
   );
 }
 
-export default PostsPage;
+export default AllPostsPage;
