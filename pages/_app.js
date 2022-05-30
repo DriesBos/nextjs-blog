@@ -1,4 +1,5 @@
 import "../styles/reset.css";
+import "../styles/variables.sass";
 import "../styles/fonts.css";
 import "../styles/globals.sass";
 import "../styles/typography.sass";
