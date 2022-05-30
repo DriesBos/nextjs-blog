@@ -25,10 +25,10 @@ function AllAuthorsPage(props) {
     <div>
       <h1>Authors List</h1>
       <br></br>
-      <ul>
+      <ul className="authorList">
         {authors.map((author) => (
           <li key={author.id}>
-            <p>Name: {author.name}</p>
+            <p>{author.name}</p>
           </li>
         ))}
       </ul>

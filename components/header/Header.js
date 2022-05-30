@@ -10,7 +10,10 @@ function Header() {
       <div>
         <ul>
           <li>
-            <Link href="/posts">Articles</Link>
+            <Link href="/posts">Essays</Link>
+          </li>
+          <li>
+            <Link href="/curated">Curated (broken)</Link>
           </li>
           <li>
             <Link href="/authors">Authors</Link>

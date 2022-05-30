@@ -24,9 +24,22 @@ function AllPostsPage(props) {
 
   return (
     <div>
-      <h1>Articles List</h1>
+      <div className="sectionIntro">
+        <h1>Original Essays</h1>
+        <p>
+          The PRACTICAL IDEALIST is dedicated to supporting and amplifying
+          innovation – both technological and intellectual – which, as our name
+          declares, combines the practical and the idealistic. We publish pieces
+          by a variety of thinkers on a variety topics, freely traversing styles
+          and perspectives. No matter the style, discipline, or subject matter,
+          we value systems thinking, actionable idealism, and beauty—because
+          without beauty, it’s all for nought. We welcome submissions from poets
+          and philosophers, artists and activists, academics and amateurs alike.
+          Want to contribute something? Click here.
+        </p>
+      </div>
       <br></br>
-      <ul>
+      <ul className="articleList">
         {props.posts.map((post) => (
           <li className="link" key={post.id}>
             <Link
@@ -35,8 +48,20 @@ function AllPostsPage(props) {
                 query: { slug: post.slug },
               }}
             >
-              <p>Article: {post.title}</p>
+              <div>
+                <p>{post.title}</p>
+              </div>
             </Link>
+            <ul className="authorList">
+              {post.authors.map((author) => (
+                <li key={author.id}>
+                  <p>{author.name}</p>
+                </li>
+              ))}
+            </ul>
+            <div>
+              <p>{post.excerpt}</p>
+            </div>
           </li>
         ))}
       </ul>
