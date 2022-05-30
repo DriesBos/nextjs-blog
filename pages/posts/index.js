@@ -24,9 +24,6 @@ function AllPostsPage(props) {
 
   return (
     <div>
-      <Link href={{ pathname: "/" }}>Home</Link>
-      <br></br>
-      <br></br>
       <h1>Articles List</h1>
       <br></br>
       <ul>

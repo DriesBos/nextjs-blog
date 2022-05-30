@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { getAllAuthors } from "../../lib/authors";
 
 export async function getStaticProps(context) {
@@ -24,9 +23,6 @@ function AllAuthorsPage(props) {
 
   return (
     <div>
-      <Link href={{ pathname: "/" }}>Home</Link>
-      <br></br>
-      <br></br>
       <h1>Authors List</h1>
       <br></br>
       <ul>

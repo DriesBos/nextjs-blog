@@ -1,6 +1,4 @@
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Link from "next/link";
 import { getSinglePost, getAllPosts } from "../../lib/posts";
 
 export async function getStaticPaths() {
@@ -39,12 +37,6 @@ function PostPage(props) {
 
   return (
     <div>
-      <Link href={{ pathname: "/" }}>Home</Link>
-      <br></br>
-      <br></br>
-      <Link href={{ pathname: "/posts/" }}>Articles</Link>
-      <br></br>
-      <br></br>
       <h1>Article Single</h1>
       <br></br>
       <h1>{post.title}</h1>
