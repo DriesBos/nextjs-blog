@@ -16,6 +16,9 @@ function Header() {
             <Link href="/authors">Authors</Link>
           </li>
           <li>
+            <Link href="/tags">Tags</Link>
+          </li>
+          <li>
             <Link href="/about">About</Link>
           </li>
         </ul>
