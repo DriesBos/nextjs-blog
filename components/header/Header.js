@@ -1,8 +1,9 @@
 import Link from "next/link";
+import styles from "./header.module.sass";
 
 function Header() {
   return (
-    <div className="header">
+    <div className={styles.header}>
       <div>
         <h1>Practical Idealist</h1>
       </div>
