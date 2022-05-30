@@ -39,8 +39,23 @@ function PostPage(props) {
     <div>
       <h1>Article Single</h1>
       <br></br>
-      <h1>{post.title}</h1>
+      <h1>Title: {post.title}</h1>
       <br></br>
+      <ul>
+        {post.authors.map((author) => (
+          <li key={author.id}>
+            <p>Author: {author.name}</p>
+          </li>
+        ))}
+      </ul>
+      <br></br>
+      <ul>
+        {post.tags.map((tag) => (
+          <li key={tag.id}>
+            <p>Tag: {tag.name}</p>
+          </li>
+        ))}
+      </ul>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <br></br>
       <img src={post.feature_image} />
