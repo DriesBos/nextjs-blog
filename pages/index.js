@@ -9,7 +9,9 @@ function Home() {
         <li>
           <Link href="/posts">Articles</Link>
         </li>
-        <br></br>
+        <li>
+          <Link href="/authors">Authors</Link>
+        </li>
         <li>
           <Link href="/about">About</Link>
         </li>
